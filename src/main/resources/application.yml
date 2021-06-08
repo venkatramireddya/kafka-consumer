@@ -1,0 +1,7 @@
+kafka:
+  bootstrap:
+    servers: 127.0.0.1:9092
+  topic: GC-Test
+  accounts:
+    topic:  account-update
+  groupId: test-group
