@@ -1,6 +1,6 @@
 kafka:
   bootstrap:
-    servers: 127.0.0.1:9092
+    servers: 127.0.0.1:9092, 127.0.0.1:9093, 127.0.0.1:9094
   topic: GC-Test
   accounts:
     topic:  account-update
