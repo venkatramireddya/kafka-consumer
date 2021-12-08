@@ -1,12 +1,13 @@
 package com.ttech.kafka.consumer;
 
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ttech.kafka.model.Account;
+import com.ttech.kafka.model.User;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public class AccountConsumer {
 
 	@KafkaListener(topics = "${kafka.accounts.topic}", groupId = "${kafka.groupId}", containerFactory = "userKafkaListenerContainerFactory")
-	public void listen(Account  account,
+	public void listen(ConsumerRecord<String, User> record,
 			@Header(KafkaHeaders.GROUP_ID) String group_id,
 			@Header(KafkaHeaders.OFFSET) String offset,
 			@Header(KafkaHeaders.RECEIVED_PARTITION_ID) String receivedPartitionId,
@@ -30,8 +31,10 @@ public class AccountConsumer {
 		log.info("*** receivedTopic = "+ receivedTopic);
 		ObjectMapper objectMapper = new ObjectMapper();
 	try {
-		String jsonInString = objectMapper.writeValueAsString(account);
-        System.out.println(jsonInString);
+		//String jsonInString = objectMapper.writeValueAsString(record.value());
+       // System.out.println(jsonInString);
+		log.info(String.format("Consumed message -> %s", record.value()));
+		log.info("Consumed message -> {}", record.value());
 	}
 	catch(Exception e) {
 		e.printStackTrace();

@@ -11,10 +11,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
-import org.springframework.kafka.support.converter.StringJsonMessageConverter;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 import com.ttech.kafka.model.User;
+
+import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 
 @Configuration
 public class KafkaConfiguration {
@@ -30,9 +31,18 @@ public class KafkaConfiguration {
 		props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 		//props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		//props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringJsonMessageConverter.class);
+		props.put("basic.auth.credentials.source","USER_INFO");
+		props.put("schema.registry.basic.auth.user.info","RLPZMD54RZMMNIOK:xAseoJIW0xzxOg+QiJgi3USz7ItW8T2kcm/1vf/aHHiVYWlatpyAbm5CuyDaoygF");
+		props.put("schema.registry.url", "https://psrc-yg906.us-east-2.aws.confluent.cloud");
+		props.put("key.converter","io.confluent.connect.avro.AvroConverter");
+		props.put("key.converter.schema.registry.url", "https://psrc-yg906.us-east-2.aws.confluent.cloud");
+		props.put("value.converter", "io.confluent.connect.avro.AvroConverter");
+		props.put("value.converter.schema.registry.url", "https://psrc-yg906.us-east-2.aws.confluent.cloud");
+		//props.put("specific.avro.reader", "true");
 		props.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
 
-		return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(Object.class) );
+		//return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(Object.class) );
+		return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new KafkaAvroDeserializer() );
 	}
 	
 	@Bean
@@ -43,12 +53,20 @@ public class KafkaConfiguration {
 	}
 	
 	 
-    public ConsumerFactory<String, User> userConsumerFactory() {
+    public ConsumerFactory<String, Object> userConsumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootStrapServer);
        // props.put(ConsumerConfig.GROUP_ID_CONFIG, userGroupId);
+        props.put("basic.auth.credentials.source","USER_INFO");
+		props.put("schema.registry.basic.auth.user.info","RLPZMD54RZMMNIOK:xAseoJIW0xzxOg+QiJgi3USz7ItW8T2kcm/1vf/aHHiVYWlatpyAbm5CuyDaoygF");
+		props.put("schema.registry.url", "https://psrc-yg906.us-east-2.aws.confluent.cloud");
+		props.put("key.converter","io.confluent.connect.avro.AvroConverter");
+		props.put("key.converter.schema.registry.url", "https://psrc-yg906.us-east-2.aws.confluent.cloud");
+		props.put("value.converter", "io.confluent.connect.avro.AvroConverter");
+		props.put("value.converter.schema.registry.url", "https://psrc-yg906.us-east-2.aws.confluent.cloud");
         props.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
-        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(User.class));
+        //props.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, "true");
+        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new KafkaAvroDeserializer());
     }
     
 	@Bean
