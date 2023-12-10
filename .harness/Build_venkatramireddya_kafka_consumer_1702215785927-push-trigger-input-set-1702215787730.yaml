@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_venkatramireddya_kafka_consumer_1702215785927-push-trigger-input-set
+  identifier: Build_venkatramireddya_kafka_consumer_1702215785927pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Venkat_Project
+  pipeline:
+    identifier: Build_venkatramireddya_kafka_consumer_1702215785927
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
