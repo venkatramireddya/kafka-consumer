@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 venkatramireddya/kafka-consumer is built on the following main stack:
+
 - [Gradle](https://www.gradle.org/) – Java Build Tools
 - [Java](https://www.java.com) – Languages
 - [Spring Framework](https://spring.io/projects/spring-framework) – Frameworks (Full Stack)
@@ -9,11 +10,13 @@ venkatramireddya/kafka-consumer is built on the following main stack:
 - [Avro](https://avro.apache.org/) – Serialization Frameworks
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 venkatramireddya/kafka-consumer is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/975/gradlephant-social-black-bg.png' alt='Gradle'/> [Gradle](https://www.gradle.org/) – Java Build Tools
 - <img width='25' height='25' src='https://img.stackshare.io/service/995/K85ZWV2F.png' alt='Java'/> [Java](https://www.java.com) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2006/spring-framework-project-logo.png' alt='Spring Framework'/> [Spring Framework](https://spring.io/projects/spring-framework) – Frameworks (Full Stack)
@@ -21,14 +24,15 @@ venkatramireddya/kafka-consumer is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/4265/avro.png' alt='Avro'/> [Avro](https://avro.apache.org/) – Serialization Frameworks
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [venkatramireddya/kafka-consumer](https://github.com/venkatramireddya/kafka-consumer)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|6<br/>Tools used|11/09/23 <br/>Report generated|
+|11<br/>Tools used|12/14/23 <br/>Report generated|
 |------|------|
 </div>
 
@@ -100,7 +104,20 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
+
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (5)</h2>
+
+## <img width='24' height='24' src='https://img.stackshare.io/package_manager/977/default_9833f2ef0bbc2a946b4cc5e9307264033361076b.png'/> Apache Maven (5)
+
+|NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
+|:------|:------|:------|:------|:------|:------|
+|[org.apache.avro:avro](http://avro.apache.org)|v1.11.0|12/08/21|Venkat Ambati |Apache-2.0|[CVE-2023-39410](https://github.com/advisories/GHSA-rhrv-645h-fjfh) (High)|
+|[org.projectlombok:lombok](https://projectlombok.org)|N/A|12/08/21|Venkat Ambati |MIT|N/A|
+|[org.springframework.boot:spring-boot-starter-actuator](https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-actuator)|N/A|12/08/21|Venkat Ambati |Apache-2.0|N/A|
+|[org.springframework.boot:spring-boot-starter-test](https://projects.spring.io/spring-boot/#/spring-boot-parent/spring-boot-starters/spring-boot-starter-test)|N/A|12/08/21|Venkat Ambati |Apache-2.0|N/A|
+|[org.springframework.kafka:spring-kafka](https://github.com/spring-projects/spring-kafka)|N/A|12/08/21|Venkat Ambati |Apache-2.0|N/A|
+
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
