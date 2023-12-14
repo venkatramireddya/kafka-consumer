@@ -1,11 +1,11 @@
 repo_name: venkatramireddya/kafka-consumer
-report_id: e066d969503ab3b0a1868a5ca3b839ba
+report_id: ce34a3b5f457726c3a622adf46994257
 repo_type: Public
-timestamp: '2023-11-09T12:40:27+00:00'
+timestamp: '2023-12-14T09:24:19+00:00'
 requested_by: venkatramireddya
 provider: github
 branch: master
-detected_tools_count: 6
+detected_tools_count: 11
 tools:
 - name: Java
   description: A concurrent, class-based, object-oriented, language specifically designed
@@ -59,7 +59,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Java Build Tools
   image_url: https://img.stackshare.io/service/975/gradlephant-social-black-bg.png
-  detection_source: gradlew.bat
+  detection_source: build.gradle
   last_updated_by: Venkat Ambati
   last_updated_on: 2021-12-08 01:57:49.000000000 Z
 - name: Apache Camel
@@ -72,5 +72,71 @@ tools:
   sub_category: Platform as a Service
   image_url: https://img.stackshare.io/service/3276/xWt1RFo6_400x400.jpg
   detection_source: src/main/resources/application.properties
+  last_updated_by: Venkat Ambati
+  last_updated_on: 2021-12-08 01:57:49.000000000 Z
+- name: org.apache.avro:avro
+  description: Avro core components
+  version: 1.11.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source_url: https://github.com/venkatramireddya/kafka-consumer/blob/master/build.gradle
+  detection_source: build.gradle
+  last_updated_by: Venkat Ambati
+  last_updated_on: 2021-12-08 01:57:49.000000000 Z
+  vulnerabilities:
+  - name: Apache Avro Java SDK vulnerable to Improper Input Validation
+    cve_id: CVE-2023-39410
+    cve_url: https://github.com/advisories/GHSA-rhrv-645h-fjfh
+    detected_date: Sep 30
+    severity: high
+    first_patched: 1.11.3
+- name: org.projectlombok:lombok
+  description: 'Spice up your java: Automatic Resource Management'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source: build.gradle
+  last_updated_by: Venkat Ambati
+  last_updated_on: 2021-12-08 01:57:49.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-actuator
+  description: Starter for using Spring Boot's Actuator which provides production
+    ready features to help you monitor and manage your application
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source: build.gradle
+  last_updated_by: Venkat Ambati
+  last_updated_on: 2021-12-08 01:57:49.000000000 Z
+- name: org.springframework.boot:spring-boot-starter-test
+  description: Starter for testing Spring Boot applications with libraries including
+    JUnit
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source: build.gradle
+  last_updated_by: Venkat Ambati
+  last_updated_on: 2021-12-08 01:57:49.000000000 Z
+- name: org.springframework.kafka:spring-kafka
+  description: Spring Kafka Support
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Maven Packages
+  image_url: https://img.stackshare.io/package/maven/image.png
+  detection_source: build.gradle
   last_updated_by: Venkat Ambati
   last_updated_on: 2021-12-08 01:57:49.000000000 Z
